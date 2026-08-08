@@ -93,7 +93,10 @@
         <p>Pour tout le reste, le formulaire ci-contre nous arrive directement, et on vous répond dès que possible.</p>
       </div>
       <div>
-        <form id="contact-form" class="form-grid">
+        <form id="contact-form" class="form-grid" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="6f5b4718-0130-42d2-9987-cfe247926049">
+          <input type="hidden" name="from_name" value="Site Bon Vivre">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
           <div>
             <label for="firstname">Prénom</label>
             <input type="text" id="firstname" name="firstname" required>
@@ -116,7 +119,7 @@
           </div>
           <div class="full">
             <button type="submit" class="btn btn-primary">Envoyer</button>
-            <p class="form-note">En cliquant sur Envoyer, votre messagerie s'ouvre avec le message pré-rempli.</p>
+            <p class="form-note" id="form-note">Votre message est transmis directement à Bon Vivre.</p>
           </div>
         </form>
       </div>

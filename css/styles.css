@@ -534,6 +534,13 @@ input:focus, textarea:focus, select:focus {
 
 .form-note { font-size: 0.85rem; color: #6b6259; margin-top: 14px; }
 
+.form-success {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--color-green);
+  padding: 24px 0;
+}
+
 .contact-info-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

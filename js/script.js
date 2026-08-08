@@ -20,25 +20,42 @@ document.addEventListener("DOMContentLoaded", function () {
   if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
+
       var firstname = contactForm.querySelector("#firstname").value.trim();
       var name = contactForm.querySelector("#name").value.trim();
       var fullName = (firstname + " " + name).trim();
-      var email = contactForm.querySelector("#email").value.trim();
-      var subject = contactForm.querySelector("#subject").value.trim() || "Message depuis le site Bon Vivre";
-      var message = contactForm.querySelector("#message").value.trim();
+      var subjectField = contactForm.querySelector("#subject");
+      var subject = subjectField.value.trim() || "Message depuis le site Bon Vivre";
+      subjectField.value = "[Site Bon Vivre] " + subject + " — " + fullName;
 
-      var body = "Prénom : " + firstname +
-        "\nNom : " + name +
-        "\nEmail : " + email +
-        "\n\n" + message +
-        "\n\n---\nPour répondre à " + fullName + ", utilisez le bouton \"Répondre\" de votre messagerie : la réponse partira directement à " + email + ".";
+      var fromNameField = contactForm.querySelector('input[name="from_name"]');
+      if (fromNameField) {
+        fromNameField.value = fullName || "Site Bon Vivre";
+      }
 
-      var mailto = "mailto:bonvivre.original@gmail.com" +
-        "?subject=" + encodeURIComponent("[Site Bon Vivre] " + subject + " — " + fullName + " (" + email + ")") +
-        "&body=" + encodeURIComponent(body) +
-        "&reply-to=" + encodeURIComponent(email);
+      var submitBtn = contactForm.querySelector('button[type="submit"]');
+      var noteEl = document.getElementById("form-note");
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Envoi en cours...";
 
-      window.location.href = mailto;
+      fetch(contactForm.action, {
+        method: "POST",
+        body: new FormData(contactForm),
+        headers: { Accept: "application/json" }
+      })
+        .then(function (response) { return response.json(); })
+        .then(function (data) {
+          if (data.success) {
+            contactForm.innerHTML = '<p class="form-success">Merci' + (firstname ? " " + firstname : "") + ' ! Votre message a bien été envoyé, on vous répond très vite.</p>';
+          } else {
+            throw new Error("Web3Forms error");
+          }
+        })
+        .catch(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Envoyer";
+          noteEl.textContent = "Une erreur est survenue. Réessayez, ou écrivez-nous directement à bonvivre.original@gmail.com.";
+        });
     });
   }
 });
