@@ -698,10 +698,11 @@ input:focus, textarea:focus, select:focus {
   background: var(--color-red) !important;
   color: var(--color-white) !important;
 }
-#tarteaucitronIcon,
-#tarteaucitronRoot #tarteaucitronIcon svg,
 #tarteaucitronDisclaimerAlert {
   background-color: var(--color-red) !important;
+}
+#tarteaucitronIcon {
+  background: transparent !important;
 }
 #tarteaucitron #tarteaucitronPrivacyUrl:hover,
 #tarteaucitronRoot .tarteaucitronDeny:hover,
