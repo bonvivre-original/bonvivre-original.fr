@@ -255,9 +255,10 @@ p { margin: 0 0 1.1em; }
   margin-bottom: 14px;
 }
 .hero .hero-tagline {
-  font-family: var(--font-impact);
-  font-size: clamp(1.4rem, 3.6vw, 2.1rem);
-  letter-spacing: 0.02em;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   margin: 10px 0 26px;
 }
