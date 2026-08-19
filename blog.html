@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PWZVBS6G');</script>
-<!-- End Google Tag Manager -->
+<!-- Gestion du consentement (tarteaucitron) avant Google Tag Manager -->
+<script>var tarteaucitronForceLanguage = 'fr';</script>
+<script src="tarteaucitron/tarteaucitron.js"></script>
+<script src="tarteaucitron/tarteaucitron.services.js"></script>
+<script>
+tarteaucitron.init({
+    "hashtag": "#tarteaucitron",
+    "cookieName": "tarteaucitron",
+    "orientation": "bottom",
+    "showAlertSmall": false,
+    "cookieslist": true,
+    "adblocker": false,
+    "AcceptAllCta": true,
+    "DenyAllCta": true,
+    "highPrivacy": true,
+    "handleBrowserDNTRequest": false,
+    "removeCredit": true,
+    "useExternalCss": false,
+    "useExternalJs": false,
+    "showIcon": true,
+    "iconPosition": "BottomRight",
+    "closePopup": true
+});
+tarteaucitron.user.googletagmanagerId = 'GTM-PWZVBS6G';
+(tarteaucitron.job = tarteaucitron.job || []).push('googletagmanager');
+</script>
+<!-- Fin gestion du consentement -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog Bon Vivre – Drôme, Ardèche &amp; Art de Vivre</title>
@@ -60,10 +80,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWZVBS6G"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 <a href="#main" class="skip-link">Aller au contenu</a>
 <header class="site-header">
   <div class="container header-inner">
@@ -169,6 +185,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   <div class="container footer-bottom">
     <p>© 2026 Bon Vivre — Marque de vêtements Drôme-Ardèche. Tous droits réservés.</p>
+    <a href="#" onclick="tarteaucitron.userInterface.openPanel(); return false;">Gérer mes cookies</a>
     <a href="https://bon-vivre.tpopsite.com/" target="_blank" rel="noopener">bon-vivre.tpopsite.com ↗</a>
   </div>
 </footer>
