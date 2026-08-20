@@ -48,6 +48,12 @@
   </url>
 
   <url>
+    <loc>https://bonvivre-original.fr/blog-rome.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
     <loc>https://bonvivre-original.fr/contact.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>

@@ -425,7 +425,7 @@ blockquote.pull-quote {
    ------------------------------------------------------------------------- */
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 32px;
 }
 .blog-card {
@@ -494,6 +494,25 @@ article.post figure.inline-media figcaption {
   text-align: right;
   margin-top: 8px;
   padding: 0 2px;
+}
+article.post .coord-list {
+  list-style: none;
+  margin: 0 0 1.6em;
+  padding: 0;
+  border-radius: var(--radius);
+  background: var(--color-cream);
+  overflow: hidden;
+}
+article.post .coord-list li {
+  padding: 12px 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  font-size: 0.95rem;
+}
+article.post .coord-list li:last-child { border-bottom: none; }
+article.post .coord-list strong {
+  color: var(--color-red);
+  font-family: var(--font-display);
+  margin-right: 4px;
 }
 
 /* -------------------------------------------------------------------------
